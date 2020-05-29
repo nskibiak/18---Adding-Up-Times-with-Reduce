@@ -182,7 +182,8 @@
     </li>
   </ul>
 <script>
-  const timeNodes = document.querySelectorAll('[data-time]');
+  const timeNodes = [...document.querySelectorAll('[data-time]')];
+  // using the spread operator to covert the nodelist into an array
   console.log(timeNodes);
 </script>
 </body>
