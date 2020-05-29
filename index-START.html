@@ -192,7 +192,7 @@
     .map(time => {
       const [mins, secs] = time.split(':').map(parseFloat);
       return (mins * 60) + secs;
-    })
+    }).reduce((firstNumber, secondNumber) => firstNumber + secondNumber)
 
     console.log(times)
 
