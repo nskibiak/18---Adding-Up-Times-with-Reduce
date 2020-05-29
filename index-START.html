@@ -182,9 +182,18 @@
     </li>
   </ul>
 <script>
-  const timeNodes = [...document.querySelectorAll('[data-time]')];
+  // const timeNodes = [...document.querySelectorAll('[data-time]')];
+  const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
   // using the spread operator to covert the nodelist into an array
   console.log(timeNodes);
+
+  const times = timeNodes
+    .map(node => node.dataset.time)
+    .map(time => {
+      const [mins, secs] = time.split(':');
+      console.log(mins,secs)
+    })
+
 </script>
 </body>
 </html>
