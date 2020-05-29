@@ -190,7 +190,7 @@
   const times = timeNodes
     .map(node => node.dataset.time)
     .map(time => {
-      const [mins, secs] = time.split(':');
+      const [mins, secs] = time.split(':').map(parseFloat);
       console.log(mins,secs)
     })
 
