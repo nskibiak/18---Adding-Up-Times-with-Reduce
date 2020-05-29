@@ -187,14 +187,22 @@
   // using the spread operator to covert the nodelist into an array
   // console.log(timeNodes);
 
-  const times = timeNodes
+  const totalSeconds = timeNodes
     .map(node => node.dataset.time)
     .map(time => {
       const [mins, secs] = time.split(':').map(parseFloat);
       return (mins * 60) + secs;
     }).reduce((firstNumber, secondNumber) => firstNumber + secondNumber)
 
-    console.log(times)
+    console.log(totalSeconds)
+
+    const hours = Math.floor(totalSeconds / 3600);
+    const secondsAfterHours = totalSeconds % 3600;
+    const minutes = Math.floor(secondsAfterHours / 60);
+    const seconds = secondsAfterHours % 60;
+    console.log(hours)
+    console.log(minutes)
+    console.log(seconds)
 
 //     const seconds = timeNodes
 //     .map(node => node.dataset.time)
